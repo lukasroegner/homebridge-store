@@ -108,7 +108,7 @@ StoreApi.prototype.handleGet = function (propertyName, response) {
     
     // Writes the response
     storage.getItem(propertyName).then(function(value) {
-        if (typeof value === 'Object') {
+        if (typeof value === 'object') {
             response.setHeader('Content-Type', 'application/json');
             response.write(JSON.stringify(value));
         } else {
