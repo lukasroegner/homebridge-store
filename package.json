@@ -1,0 +1,27 @@
+{
+  "name": "homebridge-store",
+  "version": "0.1.0",
+  "description": "Store keys and their values via HTTP API.",
+  "license": "MIT",
+  "keywords": [
+    "homebridge-plugin",
+    "homebridge",
+    "homebridge-store",
+    "storage",
+    "store"
+  ],
+  "dependencies": {
+    "node-persist": "^3.0.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/lukasroegner/homebridge-store.git"
+  },
+  "bugs": {
+    "url": "http://github.com/lukasroegner/homebridge-store/issues"
+  },
+  "engines": {
+    "node": ">=0.12.0",
+    "homebridge": ">=0.2.0"
+  }
+}
