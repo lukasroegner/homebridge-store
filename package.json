@@ -1,6 +1,6 @@
 {
   "name": "homebridge-store",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Store keys and their values via HTTP API.",
   "license": "MIT",
   "keywords": [

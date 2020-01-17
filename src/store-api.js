@@ -134,14 +134,20 @@ StoreApi.prototype.handlePost = function (propertyName, body, response) {
     const api = this;
 
     // Writes the response
-    storage.setItem(propertyName, body.trim().startsWith('{') ? JSON.parse(body) : body).then(function() {
-        response.statusCode = 200;
-        response.end();
-    }, function() {
-        api.platform.log('Error while setting value.');
+    try {
+        storage.setItem(propertyName, body.trim().startsWith('{') ? JSON.parse(body) : body).then(function() {
+            response.statusCode = 200;
+            response.end();
+        }, function() {
+            api.platform.log('Error while setting value.');
+            response.statusCode = 400;
+            response.end();
+        });
+    } catch {
+        api.platform.log('Body malformed.');
         response.statusCode = 400;
         response.end();
-    });
+    }
 }
 
 /**
